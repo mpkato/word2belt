@@ -14,7 +14,7 @@ class PyTest(TestCommand):
 
 setup(
     name = "word2belt",
-    packages = ["word2belt"],
+    packages = ["word2belt", "word2belt.scripts"],
     version = "0.0.1",
     description = "Word2Belt",
     author = "Makoto P. Kato",
@@ -25,6 +25,11 @@ setup(
     install_requires = [
         'requests'
     ],
+    entry_points = {
+        'console_scripts': [
+            "word2belt=word2belt.scripts.word2belt_script:main"
+        ]
+    },
     tests_require=['pytest'],
     cmdclass = {'test': PyTest}
 )
