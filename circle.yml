@@ -1,8 +1,13 @@
 machine:
   python:
-    version: 3.4.5
+    version: 3.4.3
 
 dependencies:
     pre:
         - pip install --upgrade setuptools
         - pip install --upgrade pip
+        - pip install pytest
+
+test:
+    override:
+        - py.test
